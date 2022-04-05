@@ -1,6 +1,11 @@
+from brownie import accounts
+import os
 
 def deploy_simple_storage():
- pass
+ # account = accounts[0]
+ # account = accounts.load("freecodecamp-account")
+ account = accounts.add(os.getenv("PRIVATE_KEY"))
+ print("account: ", account)
 
 def main():
- print("hello!")
+ deploy_simple_storage()
